@@ -31,7 +31,9 @@ function ExternalUsers() {
   useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(res=>res.json())
-    .then(data=>setUsers(data))
+    .then(data=>{
+      console.log(data)
+      setUsers(data)})
 
   },[])
 
@@ -49,7 +51,7 @@ function ExternalUsers() {
 
 function User(props){
   return(
-    <div>
+    <div style={{border:'2px solid red',margin:"20px"}}>
       <h3>
         Name{props.name}
       </h3>
